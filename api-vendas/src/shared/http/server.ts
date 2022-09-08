@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import router from './routes';
 import AppError from '../../shared/errors/AppError';
+import '@shared/typeOrm';
 
 // configuração padrao para da api
 const app = express();
