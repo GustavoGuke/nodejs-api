@@ -3,7 +3,17 @@ import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import router from './routes';
 import AppError from '../../shared/errors/AppError';
-import '@shared/typeOrm';
+import { User } from 'src/entity/user.entity';
+import { myDataSource } from '../../app-data-source';
+
+myDataSource
+  .initialize()
+  .then(() => {
+    console.log('Data Source has been initialized!');
+  })
+  .catch(err => {
+    console.error('Error during Data Source initialization:', err);
+  });
 
 // configuração padrao para da api
 const app = express();
