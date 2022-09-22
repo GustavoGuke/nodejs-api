@@ -7,7 +7,8 @@ export const myDataSource = new DataSource({
   username: 'postgres',
   password: 'docker',
   database: 'postgres',
-  entities: ['src/entity/*.js'],
+  entities: ['src/entity/*.ts'],
+  migrations: ['./src/typeorm/migrations/*.ts'],
   logging: true,
   synchronize: true,
 });
